@@ -1,0 +1,56 @@
+table {
+	margin-bottom: $spacing;
+	width: 100%;
+	th, td {
+		border: 1px solid $border-color;
+		padding: .404rem .809rem;
+		line-height: inherit;
+		text-align: left;
+	}
+	tr.even {
+		// background: lighten( $border-color, 5% );
+	}
+	// th {
+	// 	// background: $border-color;
+	// 	// border-color: darken( $border-color, 5% );
+	// 	border-bottom: none;
+	// 	text-align: left;
+	// 	vertical-align: top;
+	// }
+	thead {
+		th {
+			border-bottom: none;
+			border-bottom: none;
+			vertical-align: top;
+		}
+	}
+	tfoot {
+		th {
+			// border-bottom: 1px solid $border-color;
+		}
+	}
+	/**
+	 * Woocommerce tables
+	 */
+	// .woocommerce & {
+	// 	&.shop_attributes,
+	// 	&.shop_table {
+	// 		th, td {
+	// 			padding: .404rem .809rem;
+	// 			border: 1px solid #eeeeee;
+	// 			p{
+	// 				margin: 0;
+	// 				padding: 0;
+	// 			}
+	// 		}
+	// 	}
+	// 	&.shop_table {
+	// 		th, td {
+	// 			padding: .404rem .809rem;
+	// 			border: none;
+	// 			border-top: 1px solid #eeeeee;
+	// 			vertical-align: middle;
+	// 		}
+	// 	}
+	// }
+}

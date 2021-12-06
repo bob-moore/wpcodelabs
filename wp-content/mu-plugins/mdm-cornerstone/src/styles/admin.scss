@@ -1,0 +1,12 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+#adminmenu {
+	li.wp-menu-separator {
+		height: 16px;
+		margin: 0 0 17px;
+		display: block;
+		border-bottom: 1px solid rgba( #000, .85 );
+		box-shadow: 0 1px 0 rgba( #fff, 0.06 );
+	}
+}

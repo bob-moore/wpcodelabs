@@ -1,0 +1,208 @@
+.wp-custom-logo {
+	.site-title,
+	.site-description {
+		@include invisible();
+	}
+	.site-branding {
+		font-size: 0;
+	}
+}
+
+#masthead {
+	width: 100%;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-bottom: 4px solid $primary-color;
+    &.hero {
+    	.masthead-inner {
+    		background: linear-gradient(to bottom, rgba( #000, .7 ) 0%,rgba( #000, 0 ) 100%);
+    		z-index: 2;
+    		position: relative;
+    	}
+    	&:before {
+    		content: '';
+    		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADAQMAAABs5if8AAAABlBMVEUAAAAAAAClZ7nPAAAAAXRSTlMAQObYZgAAAAxJREFUCNdjaGAAAgAChgCB/5LsuQAAAABJRU5ErkJggg==);
+    		position: absolute;
+    		width: 100%;
+    		opacity: .4;
+    		left: 0;
+    		top: 0;
+    		height: 100%;
+    		z-index: 1;
+    	}
+    }
+	.masthead-inner > .container {
+		border-bottom: 1px solid rgba( #fff, 0.3 );
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: no-wrap;
+		padding: 0 $padding;
+	}
+	.site-branding {
+		margin-right: auto;
+		display: block;
+		max-width: calc( 100% - 65px );
+		text-align: center;
+		.custom-logo-link {
+			display: inline-block;
+		}
+		.site-title {
+			font-size: 2rem;
+			margin: 0;
+			line-height: 1;
+		}
+		.site-description {
+			margin: 0;
+			line-height: 1;
+		}
+		img {
+			max-height: 65px;
+			width: auto;
+		}
+	}
+	nav {
+		.menu-item-depth-0 {
+			> .nav-item-container {
+				a, a:link {
+					color: #fff;
+					font-weight: 600;
+					text-shadow: 0 1px 10px rgba(0,0,0,.3);
+					padding: 1.5em;
+					height: 95px;
+					display: flex;
+					align-items: center;
+					border-bottom: 2px solid transparent;
+					&:before,
+					&:after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						width: 0;
+						height: 2px;
+						transition: all 0.4s ease-in-out;
+						opacity: 0;
+						background-color: $primary-color;
+					}
+					&:after {
+						left: 0;
+					}
+					&:hover,
+					&:focus {
+						&:after {
+							opacity: 1;
+							width: 100%;
+						}
+					}
+				}
+			}
+		}
+	}
+	@include breakpoint( $navigation-breakpoint ) {
+		.menu-toggle {
+			display: none;
+		}
+	}
+}
+
+// #masthead {
+// 	width: 100%;
+//     position: relative;
+//     text-align: center;
+//     background-position: center center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-color: #fff;
+//     border-bottom: 4px solid $primary-color;
+//     &.hero {
+//     	.masthead-inner {
+//     		background: linear-gradient(180deg, rgba(#000,.55) 0%, rgba(#000, .25) 100%);
+//     	}
+//     	nav {
+//     		.menu-item-depth-0 {
+//     			> .nav-item-container {
+//     				a, a:link {
+//     					color: #fff;
+//     					&:hover,
+//     					&:focus {
+//     						color: $link-color;
+//     					}
+//     				}
+//     			}
+//     		}
+//     	}
+//     }
+// 	nav {
+// 		width: 100%;
+// 		font-size: 14px;
+// 		.menu-item-depth-0 {
+// 			> .nav-item-container {
+// 				a, a:link {
+// 					font-weight: 600;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.menu-toggle {
+// 		width: 65px;
+// 		border: none;
+// 		outline: none;
+// 		transition: all .25s ease;
+// 		background: transparent;
+// 		margin: 0;
+// 	}
+// 	.site-branding {
+// 		margin-right: auto;
+// 		display: block;
+// 		max-width: calc( 100% - 65px );
+// 		text-align: center;
+// 		.custom-logo-link {
+// 			display: inline-block;
+// 		}
+// 		.site-title {
+// 			font-size: 2rem;
+// 			margin: 0;
+// 			line-height: 1;
+// 		}
+// 		.site-description {
+// 			margin: 0;
+// 			line-height: 1;
+// 		}
+// 		img {
+// 			max-height: 65px;
+// 			width: auto;
+// 		}
+// 	}
+// 	.masthead-inner > .container {
+// 		max-width: none;
+// 		display: flex;
+// 		flex-direction: row;
+// 		align-items: center;
+// 		flex-wrap: wrap;
+// 		padding: $padding;
+// 	}
+// 	@include breakpoint( $navigation-breakpoint ) {
+// 		.container {
+// 			flex-wrap: nowrap;
+// 		}
+// 		.menu-toggle {
+// 			display: none;
+// 		}
+// 		.masthead-inner > .container {
+// 			max-width: none;
+// 			display: block;
+// 			padding: 0;
+// 		}
+// 		.site-branding {
+// 			padding: $padding;
+// 			margin: 0 auto;
+// 			img {
+// 				max-height: none;
+// 				height: auto;
+// 			}
+// 		}
+// 	}
+// }

@@ -1,0 +1,29 @@
+.cart {
+	.product-remove {
+		// width: 4rem;
+	}
+	.quantity {
+		width: 6rem;
+	}
+	td.product-name {
+		width: 100%;
+	}
+	td.product-subtotal {
+		background-color: #F7F6F7;
+		font-weight: 600;
+	}
+	.cart_item {
+		margin-bottom: $spacing;
+	}
+}
+
+.cart_totals {
+	h2 {
+		font-size: 1.25rem;
+		line-height: 1;
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: $spacing;
+		display: block;
+	}
+}

@@ -1,0 +1,44 @@
+a, a:link {
+    color: $link-color;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .25s ease;
+    &:hover,
+    &:focus {
+    	color: $link-hover-color;
+    }
+}
+
+.read-more-link {
+	._s_icon {
+		vertical-align: middle;
+	}
+}
+a.post-thumbnail {
+	overflow: hidden;
+	display: block;
+	position: relative;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background: rgba( #000, .35 );
+		opacity: 0;
+		transition: opacity .35s;
+	}
+	img {
+		transition: transform .35s;
+	}
+	&:hover,
+	&:focus {
+		&:after {
+			opacity: 1;
+		}
+		img {
+			transform: scale( 1.025 );
+		}
+	}
+}

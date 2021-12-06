@@ -1,0 +1,179 @@
+body {
+	font-family: $bodyfont;
+	font-weight: 300;
+	line-height: $line-height;
+	-webkit-font-smoothing: antialiased;
+	color: $font-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	font-family: $headline;
+	font-weight: 700;
+	line-height: 1.15;
+	margin: 0 0 $spacing;
+	// clear: both;
+	word-break: break-word;
+	letter-spacing: -1px;
+	span.thin {
+		font-weight: 300;
+	}
+}
+
+.fl-module-heading .fl-module-content {
+	margin-bottom: $spacing;
+}
+
+h1, .h1 {
+	font-size: 1.85rem;
+}
+
+h2, .h2 {
+	font-size: 1.6rem;
+}
+
+h3, .h3 {
+	font-size: 1.45rem;
+}
+
+h4, .h4 {
+	font-size: 1.3rem;
+}
+
+h5, .h5 {
+	font-size: 1.15rem;
+}
+
+h6, .h6 {
+	font-size: 1rem;
+}
+
+@include breakpoint( 'tablet-small' ) {
+	h1, .h1 {
+	    font-size: 2.25rem;
+	}
+	h2, .h2 {
+	    font-size: 2rem;
+	}
+	h3, .h3 {
+	    font-size: 1.75rem;
+	}
+	h4, .h4 {
+	    font-size: 1.5rem;
+	}
+	h5, .h5 {
+	    font-size: 1.25rem;
+	}
+}
+
+@include breakpoint( 'desktop' ) {
+	h1, .h1 {
+	    font-size: 3.5rem;
+	}
+	h2, .h2 {
+	    font-size: 3rem;
+	}
+	h3, .h3 {
+	    font-size: 2.5rem;
+	}
+	h4, .h4 {
+	    font-size: 2rem;
+	}
+	h5, .h5 {
+	    font-size: 1.5rem;
+	}
+}
+
+.lead {
+    font-size: 1.25em;
+}
+.jumbo {
+    font-size: 10em;
+}
+
+p,
+address {
+	margin-bottom: 1.5em;
+	&:last-child {
+		// margin-bottom:0;
+	}
+	&:empty {
+		display: none;
+	}
+}
+
+hr {
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid $border-color;
+	clear: both;
+	margin: $spacing 0;
+}
+
+blockquote {
+	font-size: 1.25em;
+	font-style: italic;
+	font-family: $serif;
+	font-weight: 400;
+	margin-bottom: 1.5em;
+	cite {
+		display: block;
+		clear: both;
+		text-align: right;
+		font-weight: 600;
+	}
+}
+q,
+cite {
+	font-style: italic;
+	// font-family: $serif;
+}
+code {
+	background: $border-color;
+	padding: 0 10px;
+}
+
+pre {
+	padding: 10px;
+	background: $border-color;
+	code {
+		padding: 0;
+	}
+}
+.entry-title,
+.widget,
+p {
+	word-break: break-word;
+}
+.entry-title {
+	display: block;
+	font-size: 36px;
+	margin-top: $padding;
+	&:before {
+		content: '';
+		display: block;
+		width: 50px;
+		height: 2px;
+		background-color: $primary-color;
+		position: relative;
+		top: -18px;
+		// bottom: 10px;
+	}
+	a, a:link {
+		color: $font-color;
+		&:hover,
+		&:focus {
+			color: $link-color;
+		}
+	}
+}

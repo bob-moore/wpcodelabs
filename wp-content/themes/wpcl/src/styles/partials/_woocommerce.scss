@@ -1,0 +1,14 @@
+body.woocommerce,
+body.woocommerce-page {
+	#page {
+		/**
+		 * Imports
+		 */
+		@import 'woocommerce/global';
+		@import 'woocommerce/myaccount';
+		@import 'woocommerce/shop';
+		@import 'woocommerce/product';
+		@import 'woocommerce/cart';
+		@import 'woocommerce/checkout';
+	}
+}

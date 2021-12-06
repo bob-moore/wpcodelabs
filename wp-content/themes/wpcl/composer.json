@@ -1,0 +1,12 @@
+{
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"Scaffolding\\" : "lib"
+		}
+	},
+	"require": {
+		"aristath/kirki": "^3.1"
+	}
+}

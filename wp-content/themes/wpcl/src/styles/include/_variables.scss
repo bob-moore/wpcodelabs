@@ -1,0 +1,141 @@
+$serif      : georgia, serif !default;
+$sans-serif : 'Proxima Nova', sans-serif !default;
+$headline : 'myriad-pro', sans-serif !default;
+$bodyfont : $sans-serif !default;
+$monospaced : 'Courier', monospace !default;
+
+$base-font-size  : 16px !default;
+$tiny-font-size  : .6em;
+$small-font-size : .85em !default;
+$large-font-size : 1.25em !default;
+
+$breakpoints: (
+    "phone"         : 544px,
+    "tablet-small"  : 660px,
+    "tablet"        : 768px,
+    "tablet-wide"   : 992px,
+    "desktop"       : 1200px,
+    "desktop-wide"  : 1440px,
+    "desktop-hd"    : 1920px,
+);
+
+$spacing : 30px !default; // base spacing of elements (used for line height, padding, and some marging)
+
+$padding : 30px !default;
+
+$gutter : $spacing / 2 !default; // Used to create gutters on the grid
+
+$sidebar-content-gutter : $spacing / 2 !default;
+
+$sidebar-content-padding : $padding !default;
+
+$grid-columns : 12; // Number of columns to create
+
+$line-height: 1.618 !default;
+
+// $max-width : map-get( $breakpoints, 'hd' ) - ( $padding * 2 ) !default; // Maximum width any element can occupy at the base font size
+
+$max-width : 100% !default;
+
+$primary-sidebar-width : 500px !default;
+
+$primary-sidebar-responsive-width: 360px !default;
+
+$layout-breakpoint : 'tablet-wide' !default;
+
+$layout-medium-breakpoint : 'desktop' !default; // the default breakpoint to break layout
+
+$layout-responsive-breakpoint : 'tablet-wide' !default;
+
+$navigation-breakpoint : 'tablet-wide' !default; // the breakpoint to transition mobile => desktop navigation
+
+$header-breakpoint : $navigation-breakpoint !default; // the breakpoint the header transitions
+
+$footer-breakpoint : $layout-breakpoint !default; // the breakpoint the footer widgets break
+
+/*  Colors ------------------------------------------------------------------- */
+
+$font-color : #434343 !default;
+
+$light-font-color: lighten( $font-color, 5% ) !default;
+
+$primary-color : #0E89CF !default;
+
+$secondary-color : #333 !default;
+
+$success-color : #3adb76 !default;
+
+$warning-color : #ffae00 !default;
+
+$alert-color : #cc4b37 !default;
+
+$primary-gradient : linear-gradient( 135deg, $primary-color 0%, darken( $primary-color, 5% ) 100% ) !default;
+
+$border-radius: 0 !default;
+
+$border-color : #ccc !default;
+
+$facebook-color   : #3b5998 !default;
+$twitter-color    : #55acee !default;
+$googleplus-color : #dd4b39 !default;
+$youtube-color    : #bb0000 !default;
+$linkedin-color   : #007bb5 !default;
+$instagram-color  : #125688 !default;
+$whatsapp-color   : #4dc247 !default;
+$pinterest-color  : #cb2027 !default;
+$reddit-color     : #ff4500 !default;
+$tumblr-color     : #35465c !default;
+$rss-color        : #ff6600 !default;
+
+$material-box-shadow : 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24) !default;
+
+$material-box-shadow-hover : 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !default;
+
+/** New things needed for customizer */
+$link-color    : $primary-color !default;
+$link-hover-color : $secondary-color !default;
+
+$button-background : $link-color !default;
+$button-hover-background : #333 !default;
+$button-color: #fefefe !default;
+$button-hover-color: #fefefe !default;
+
+// $input-border-radius  : $border-radius !default;
+// $input-margin-bottom  : $spacing !default;
+// $input-border-color   : $border-color !default;
+// $input-padding-top    : $gutter !default;
+// $input-padding-right  : $gutter !default;
+// $input-padding-bottom : $gutter !default;
+// $input-padding-left   : $gutter !default;
+
+// $input-border-size   : 1px !default;
+// $input-background : #ffffff !default;
+
+// $primary-nav-background : transparent !default;
+// $primary-nav-link-background: transparent !default;
+// $primary-nav-link-hover-background : transparent !default;
+// $primary-nav-link-color : $link-color !default;
+// $primary-nav-link-hover-color : $link-hover-color !default;
+
+// $responsive-primary-nav-background : $primary-nav-background !default;
+// $responsive-primary-nav-link-background: $primary-nav-link-background !default;
+// $responsive-primary-nav-link-hover-background : $primary-nav-link-hover-background !default;
+// $responsive-primary-nav-link-color : $primary-nav-link-color !default;
+// $responsive-primary-nav-link-hover-color : $primary-nav-link-hover-color !default;
+
+// $primary-subnav-background : #fff !default;
+// $primary-subnav-border-radius : 0 !default;
+// $primary-subnav-link-color : $primary-nav-link-color !default;
+// $primary-subnav-link-hover-color : $primary-nav-link-hover-color !default;
+// $primary-subnav-link-background: transparent !default;
+// $primary-subnav-link-hover-background : transparent !default;
+
+// $responsive-primary-subnav-background : $primary-subnav-background !default;
+// $responsive-primary-subnav-border-radius : 0 !default;
+// $responsive-primary-subnav-link-color : $primary-subnav-link-color !default;
+// $responsive-primary-subnav-link-hover-color : $primary-subnav-link-hover-color !default;
+// $responsive-primary-subnav-link-background: $primary-subnav-link-background !default;
+// $responsive-primary-subnav-link-hover-background : $primary-subnav-link-hover-background !default;
+
+// $headline-font-weight: 400 !default;
+// $headline-font-color: $font-color !default;

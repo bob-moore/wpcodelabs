@@ -1,0 +1,1 @@
+<?php include _s_get_template_part( 'blocks', 'testimonial-slider', false ); ?>

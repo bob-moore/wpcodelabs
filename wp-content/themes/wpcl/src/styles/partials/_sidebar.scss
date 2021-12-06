@@ -1,0 +1,59 @@
+.sidebar {
+	.widget {
+		font-size: .9em;
+		li {
+			color: $light-font-color;
+			line-height: 1.4;
+			border-bottom: 1px solid $border-color;
+			padding: 0 0 1em;
+			margin-bottom: 1em;
+			&:last-child {
+				border: none;
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+			a, a:link {
+				display: inline-block;
+				color: $light-font-color;
+				// border-bottom: 1px solid $border-color;
+				&:hover, &:focus {
+					color: $link-color;
+					// border-color: $link-color;
+				}
+			}
+			ul.children, ul.sub-menu {
+				border-top: 1px solid $border-color;
+				padding-top: 1em;
+				margin-top: 1em;
+				// padding-left: 1em;
+				// border-left: 1px solid $border-color;
+				// border-top: 1px solid $border-color;
+				// margin-left: 1em;
+				> li {
+					margin-left: 1em;
+				}
+			}
+		}
+		input[type="text"],
+		input[type="password"],
+		input[type="date"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="month"],
+		input[type="week"],
+		input[type="email"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="time"],
+		input[type="url"],
+		input[type="color"],
+		select,
+		textarea {
+			max-width: 100%;
+			overflow: hidden;
+			white-space: pre;
+			text-overflow: ellipsis;
+		}
+	}
+}

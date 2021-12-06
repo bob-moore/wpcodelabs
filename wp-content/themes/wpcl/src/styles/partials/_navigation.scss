@@ -1,0 +1,303 @@
+@mixin hover_menu(){
+	ul {
+		margin: 0;
+	}
+	a, a:link {
+		display: block;
+		text-decoration: none;
+		width: 100%;
+		line-height: 1.25;
+		padding: 1em;
+	}
+	.menu-item {
+		display: inline-block;
+		border: none;
+		position: relative;
+		width: auto;
+		&:hover,
+		&:focus,
+		&.focus {
+			> .sub-menu {
+				left: 0;
+				transform: scale( 1, 1 );
+				opacity: 1;
+			}
+		}
+		> .sub-menu.activated,
+		> .sub-menu.activating {
+			left: 0;
+			transform: scale( 1, 1 );
+			opacity: 1;
+		}
+	}
+	.menu-item .sub-menu {
+		.nav-item-container {
+			padding: 0;
+		}
+		li:hover,
+		li:focus,
+		li.focus
+		li.activated {
+			> .sub-menu {
+				left: 100%;
+				transform: scale( 1, 1 );
+				opacity: 1;
+			}
+		}
+		li.focus
+		li.activated {
+			> a {
+				background: #fbfbfb;
+			}
+		}
+		.sub-menu.activated,
+		.sub-menu.activating {
+			left: 100%;
+		}
+
+	}
+	> li {
+		&:first-child {
+			border: none;
+		}
+		&:last-child {
+			border: none;
+		}
+	}
+	.sub-menu {
+		position: absolute;
+		top: 100%;
+		background-color: #fff;
+		min-width: 200px;
+		line-height: 1;
+		text-align: left;
+		z-index: 999;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+		display: block;
+		padding: 0;
+		border-radius: 0 0 2px 2px;
+		transform: scale( 1, 0 );
+		transform-origin: 0 0;
+		transition: transform .25s ease, opacity .25s ease;
+		opacity: 0;
+		li {
+			display: block;
+		}
+		.sub-menu {
+			top: 0;
+		}
+		a, a:link {
+			padding: 1em 1.5em;
+			color: $font-color;
+			text-transform: none;
+			&:hover,
+			&:focus {
+				background: darken( #fff, 3% );
+				color: $link-color;
+			}
+		}
+	}
+	html.touch & {
+		.sub-menu-toggle {
+			display: block;
+			width: 1em;
+		}
+	}
+	.sub-menu-toggle {
+		display: none;
+		border: none;
+		background: transparent;
+		font-size: 1em;
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+		// width: 65px;
+		// padding: 1em;
+		// color: $font-color;
+		html.touch {
+			display: block;
+		}
+	}
+}
+
+
+
+.menu {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-position: inside;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	li {
+		list-style-type: none;
+		list-style-position: inside;
+		display: inline-block;
+		border: none;
+		position: relative;
+		vertical-align: top;
+		width: auto;
+	}
+	.sub-menu {
+		display: block;
+		li {
+			display: block;
+		}
+		a, a:link {
+			padding: .5em 1.5em;
+		}
+	}
+	.sub-menu-toggle {
+		background: transparent;
+		color: $font-color;
+		width: 65px;
+		display: none;
+		border: none;
+		background: transparent;
+		font-size: 1em;
+		line-height: 1;
+		padding: 0;
+		margin: 0;
+	}
+	.nav-item-container,
+	.nav-text,
+	.nav-description {
+		display: block;
+	}
+	.nav-item-container {
+		// margin-bottom: 1rem;
+		display: block;
+		flex-direction: row;
+		width: 100%;
+		a, a:link {
+			flex: 1;
+			display: block;
+			text-decoration: none;
+			width: 100%;
+			line-height: 1.25;
+			padding: 1em;
+		}
+	}
+	.nav-description {
+		font-size: .85em;
+		line-height: 1;
+	}
+}
+
+@mixin dropdown_menu() {
+	.menu-item {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	.nav-item-container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		a, a:link {
+			flex: 1;
+		}
+	}
+	.sub-menu {
+		position: relative;
+		top: auto;
+		width: 100%;
+		box-shadow: none;
+		padding: 0;
+		border-radius: 0;
+		transform: none;
+		transform-origin: none;
+		opacity: 1;
+		display: none;
+		left: auto;
+		.nav-item-container {
+			font-size: .95em;
+			padding-left: 1em;
+		}
+		&.activated,
+		&.activating {
+			display: block;
+		}
+		.sub-menu {
+			left: auto;
+			// .nav-item-container {
+			// 	padding-left: 1em;
+			// }
+		}
+
+	}
+	.sub-menu-toggle {
+		display: block;
+		border-radius: 0;
+		border: none;
+	}
+}
+
+#site-navigation {
+	// @include dropdown_menu();
+	.menu {
+		display: none;
+	}
+	// &.activating,
+	// &.activated {
+	// 	.menu {
+	// 		display: block;
+	// 	}
+	// }
+
+	@include breakpoint( $navigation-breakpoint ) {
+		@include hover_menu();
+		.menu {
+			display: block;
+		}
+	}
+}
+
+.navbar {
+	background-color: #fff;
+	border-top: 1px solid $border-color;
+	.menu-item-depth-0 {
+		&:hover,
+		&:focus {
+			background: rgba( #000, .05 );
+		}
+		> .nav-item-container {
+			a, a:link {
+				// color: #fff;
+				text-transform: uppercase;
+				font-weight: 600;
+				font-size: 14px;
+			}
+		}
+	}
+
+	@include breakpoint( $navigation-breakpoint ) {
+		.menu-toggle {
+			display: none;
+		}
+	}
+}
+
+aside .menu,
+.widget .menu {
+	display: block;
+	@include dropdown_menu();
+}
+
+aside .menu {
+	.nav-item-container {
+		// background-color: #fcfcfc;
+		// border: 1px solid $border-color;
+		// margin-bottom: 5px;
+	}
+	.sub-menu {
+		padding-left: $padding;
+		.nav-item-container {
+			padding: 0;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+table.business-hours {
+	border: none;
+	td, th {
+		border: none;
+		background: transparent;
+		line-height: 1;
+		font-size: 1rem;
+		padding: $gutter;
+	}
+	.title {
+		text-align: left;
+		padding-left: 0;
+	}
+	.hours {
+		text-align: right;
+		padding-right: 0;
+	}
+}
+
+ul.cs-icon-list {
+	list-style-type: none !important;
+	list-style-position: inside !important;
+	margin-left: 1.3em;
+	li {
+		list-style-type: none !important;
+		list-style-position: inside !important;
+		display: flex;
+		flex-direction: row;
+		margin-bottom: .5em;
+		.content {
+			flex: 1 1 auto;
+			p:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.bullet {
+			margin-right: 1em;
+		}
+	}
+}

@@ -1,0 +1,172 @@
+@mixin button( $background, $hover-background, $color, $hover-color ) {
+	display: inline-block;
+	vertical-align: middle;
+	font-family: inherit;
+	font-size: inherit;
+	padding: $gutter $padding;
+	border-radius: 0;
+	transition: all 0.25s ease-out;
+	line-height: 1;
+	text-align: center;
+	cursor: pointer;
+	background: $background;
+	color: $color;
+	margin: 0;
+	position: relative;
+	text-decoration: none;
+	outline: none;
+	border: none;
+	// * {
+	// 	color: $color;
+	// }
+    &:hover, &:focus {
+	    background-color: $hover-background;
+	    color: $hover-color;
+	    // * {
+	    // 	color: $hover-color;
+	    // }
+    }
+    &:disabled,
+    &:disabled[disabled] {
+    	color: $color;
+    	cursor: not-allowed;
+    	opacity: .5;
+    	padding: 0.85em 1em;
+    	&:hover, &:focus {
+    		background-color: $hover-background;
+    		color: $hover-color;
+    		* {
+    			color: $hover-color;
+    		}
+    	}
+    }
+    &.tiny {
+    	font-size: $tiny-font-size;
+    }
+    &.small {
+    	font-size: $small-font-size;
+    }
+    &.large {
+    	font-size: $large-font-size;
+    }
+    &.button-gradient {
+    	background: linear-gradient( to right, $background 0%, darken( $background, 20% ) 100% );
+    	&:hover,
+    	&:focus {
+    		transform: translate3d( 0, -1px, 0 );
+    	}
+    }
+    &.transparent,
+    &.button-transparent {
+    	background-color: transparent;
+    	border-color: $background;
+    	color: $background;
+    	border-width: 2px;
+    	border-style: solid;
+    	// * {
+    	// 	color: $background;
+    	// }
+    	&:hover, &:focus {
+    		background: transparent;
+    		color: darken( $background, 10% );
+    		border-color: darken( $background, 10% );
+    		// * {
+    		// 	color: darken( $background, 10% );
+    		// }
+    	}
+    }
+    &.block {
+    	display: block;
+    	width: 100%;
+    }
+}
+
+/**
+ * Standard Buttons
+ */
+
+	button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	a.button,
+	a:link.button
+	.be-button.button {
+
+		@include button( $button-background, $button-hover-background, $button-color, $button-hover-color );
+	}
+
+
+/**
+ * Woocommerce buttons
+ */
+ .woocommerce #respond input#submit.alt,
+ .woocommerce a.button.alt,
+ .woocommerce button.button.alt,
+ .woocommerce input.button.alt {
+	background-color: $button-background;
+	color: $button-color;
+ }
+.woocommerce {
+	#respond input#submit,
+	a.button,
+	button.button,
+	input.button {
+		@include button( $button-background, $button-hover-background, $button-color, $button-hover-color );
+		background-color: $button-background !important;
+		color: $button-color !important;
+		&:hover,
+		&:focus {
+			background-color: $button-hover-background !important;
+			color: $button-color !important;
+		}
+	}
+}
+/**
+ * Beaver Builder Buttons
+ */
+.site {
+	.fl-module-content {
+		a.fl-button, a.fl-button:link, a.fl-button:visited {
+			@include button( $button-background, $button-hover-background, $button-color, $button-hover-color );
+			* {
+				color: $button-color;
+			}
+		}
+		.fl-button-width-full {
+			.fl-button {
+				display: inline;
+			}
+			a.fl-button {
+				display: block !important;
+			}
+		}
+	}
+}
+
+
+.pagination {
+	margin-bottom: $spacing;
+	@include clearfix();
+	ul {
+		list-style-type: none;
+		list-style-position: inside;
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+	}
+	a, a:link {
+		// @extend .button;
+		padding: $gutter;
+	}
+}
+
+button.menu-toggle{
+	margin-bottom: 0px;
+}
+
+button#site-navigation-toggle {
+	color: $font-color;
+}

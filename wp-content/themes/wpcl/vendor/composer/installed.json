@@ -1,0 +1,65 @@
+[
+    {
+        "name": "aristath/kirki",
+        "version": "3.1.5",
+        "version_normalized": "3.1.5.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/kirki-framework/kirki.git",
+            "reference": "e26eb051a0e6f89e6f54efbb3873e53debcab626"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/kirki-framework/kirki/zipball/e26eb051a0e6f89e6f54efbb3873e53debcab626",
+            "reference": "e26eb051a0e6f89e6f54efbb3873e53debcab626",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2"
+        },
+        "require-dev": {
+            "codacy/coverage": "dev-master",
+            "composer/installers": "*",
+            "dealerdirect/phpcodesniffer-composer-installer": "*",
+            "php-coveralls/php-coveralls": "^2.0",
+            "phpcompatibility/phpcompatibility-wp": "*",
+            "phpunit/phpunit": "*",
+            "wp-coding-standards/wpcs": "*"
+        },
+        "time": "2020-08-10T09:19:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            ".",
+            "core"
+        ],
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "aristath",
+                "email": "aristath@gmail.com",
+                "homepage": "https://aristath.github.io",
+                "role": "Developer"
+            }
+        ],
+        "description": "Extending the WordPress customizer",
+        "homepage": "https://kirki.org",
+        "keywords": [
+            "customizer",
+            "wordpress"
+        ],
+        "funding": [
+            {
+                "url": "https://aristath.github.io/donate",
+                "type": "custom"
+            },
+            {
+                "url": "https://github.com/aristath",
+                "type": "github"
+            }
+        ]
+    }
+]

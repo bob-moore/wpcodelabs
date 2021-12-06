@@ -1,0 +1,10 @@
+{
+	"autoload": {
+		"psr-4": {
+			"mdm\\cornerstone\\" : ""
+		}
+	},
+	"require": {
+		"aristath/kirki": "^3.1"
+	}
+}

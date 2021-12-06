@@ -1,0 +1,60 @@
+#colophon {
+	padding: $gutter $padding;
+	border-top: 1px solid $border-color;
+	text-align: center;
+	background: #000;
+	color: #fff;
+	font-weight: 600;
+	a, a:link {
+		color: #fff;
+		display: inline-block;
+	}
+	.site-info {
+		p {
+			margin: 0;
+		}
+	}
+	> .container {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		> div,
+		> nav {
+			width: 100%;
+		}
+	}
+	.jetpack-social-navigation {
+		.menu {
+			justify-content: center;
+			flex-wrap: nowrap;
+		}
+	}
+	nav {
+		.menu {
+			display: block;
+		}
+		a, a:link {
+			padding: 0 1em;
+		}
+	}
+	@include breakpoint( $layout-responsive-breakpoint ) {
+		text-align: left;
+		> .container {
+			> div,
+			> nav {
+				width: auto;
+			}
+		}
+		.site-info {
+			flex: 1;
+		}
+		.jetpack-social-navigation {
+			.menu {
+				justify-content: flex-end;
+				flex-wrap: nowrap;
+			}
+		}
+	}
+
+}
