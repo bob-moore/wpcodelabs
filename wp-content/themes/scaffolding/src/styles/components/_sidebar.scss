@@ -1,0 +1,12 @@
+#secondary {
+	a.no-sidebar-message {
+		display: block;
+		padding: 40px 1em;
+		background-color: #f1f1f1;
+		text-align: center;
+		border: 3px dashed #ccc;
+		p:last-child {
+			margin: 0;
+		}
+	}
+}

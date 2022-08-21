@@ -1,0 +1,9 @@
+{% if post.has_term( '', 'category' ) %}
+
+	<span class="entry-term-list">
+		{% for term in post.terms( {query:{ taxonomy: 'category' }} ) %}
+			<a href="{{term.link}}" rel="tag">{{term.name}}</a>
+		{% endfor %}
+	</span>
+
+{% endif %}

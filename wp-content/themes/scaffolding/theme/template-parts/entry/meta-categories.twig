@@ -1,0 +1,10 @@
+{% if post.has_term( '', 'category' ) %}
+
+	<span class="entry-term-list">
+		Posted In
+		{% for term in post.terms( {query:{ taxonomy: 'category' }} ) %}
+			<a href="{{term.link}}" rel="tag">{{term.name}}</a>{% if not loop.last %}, {% endif %}
+		{% endfor %}
+	</span>
+
+{% endif %}

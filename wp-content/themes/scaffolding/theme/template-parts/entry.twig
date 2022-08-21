@@ -1,0 +1,41 @@
+{{do_action( 'entry/before' )}}
+
+<article id="post-{{ post.ID }}" {{markup_atts( 'entry', { 'class' : 'entry' } )}}>
+
+	{{do_action( 'entry/open' )}}
+
+	{% if has_action( 'entry/header' ) %}
+
+		{{do_action( 'entry/header/before' ) }}
+
+		<header class="entry-header">{{do_action( 'entry/header' ) }}</header>
+
+		{{do_action( 'entry/header/after' ) }}
+
+	{% endif %}
+
+	{% if has_action( 'entry/content' ) %}
+
+		{{do_action( 'entry/content/before' ) }}
+
+		<div class="entry-content">{{do_action( 'entry/content' )}}</div>
+
+		{{do_action( 'entry/content/after' ) }}
+
+	{% endif %}
+
+	{% if has_action( 'entry/footer' ) %}
+
+		{{do_action( 'entry/footer/before' ) }}
+
+		<div class="entry-footer">{{do_action( 'entry/footer' ) }}</div>
+
+		{{do_action( 'entry/footer/after' ) }}
+
+	{% endif %}
+
+	{{do_action( 'entry/close' )}}
+
+</article>
+
+{{do_action( 'entry/after' )}}

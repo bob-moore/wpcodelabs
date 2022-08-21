@@ -1,0 +1,13 @@
+{{do_action( 'loop/start' )}}
+
+{% for post in posts %}
+
+	{{do_action( 'loop/enter' )}}
+
+	{{do_action( 'entry' )}}
+
+	{{do_action( 'loop/leave' )}}
+
+{% endfor %}
+
+{{do_action( 'loop/end' )}}

@@ -1,0 +1,51 @@
+{% if previous_post or next_post %}
+
+	<div class="post-navigation">
+
+	{% if previous_post %}
+
+		<a class="post-navigation-link link-prev" href="{{previous_post.link}}">
+
+			<div class="link-content">
+
+				<span class="label">{{__( 'Previous', 'scaffolding' )}}</span>
+
+				<span class="title">{{previous_post.title}}</span>
+
+			</div>
+
+			<div class="link-icon">
+
+				<span {{ markup_atts( 'link-prev-icon', { 'class' : '_s_icon _s_icon-arrow_back' } )}}></span>
+
+			</div>
+
+		</a>
+
+	{% endif %}
+
+	{% if next_post %}
+
+		<a class="post-navigation-link link-next" href="{{next_post.link}}">
+
+			<div class="link-content">
+
+				<span class="label">{{__( 'Next', 'scaffolding' )}}</span>
+
+				<span class="title">{{next_post.title}}</span>
+
+			</div>
+
+			<div class="link-icon">
+
+				<span {{ markup_atts( 'link-next-icon', { 'class' : '_s_icon _s_icon-arrow_forward' } )}}></span>
+
+			</div>
+
+		</a>
+
+	{% endif %}
+
+	</div>
+
+{% endif %}

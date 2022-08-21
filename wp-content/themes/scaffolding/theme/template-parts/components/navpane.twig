@@ -1,0 +1,18 @@
+<div {{markup_atts( 'navpane-container', { 'class' : 'container' })}}>
+
+	{% if menu( 'primary' ) %}
+
+		<nav id="offcanvas-navigation" {{markup_atts( 'offcanvas-navigation', { class : 'navpane-menu' } )}}>
+
+			{{template_part( 'components/menu', '', { menu : menu( 'primary' ) } ) }}
+
+		</nav>
+
+	{% endif %}
+
+</div>
+
+
+
+
+

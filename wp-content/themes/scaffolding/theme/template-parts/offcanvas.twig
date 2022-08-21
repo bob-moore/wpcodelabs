@@ -1,0 +1,11 @@
+{% if has_action( 'navpane' ) %}
+
+	<aside id="navpane" {{markup_atts( 'navpane', { 'class' : 'navigation-pane', 'data-type' : 'overlay' } )}}>
+
+		{{template_part( 'components/navpane-close' )}}
+
+		{{do_action( 'navpane' )}}
+
+	</aside>
+
+{% endif %}

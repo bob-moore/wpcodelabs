@@ -1,0 +1,70 @@
+@mixin formInput() {
+	display: block;
+	width: 100%;
+	line-height: 1;
+	transition: all .25s ease-in-out;
+	// appearance: none;
+	border-radius: var( --s-form-input-border-radius );
+	border-color: var( --s-form-input-border-color );
+	border-style: var( --s-form-input-border-style );
+	border-width: var( --s-form-input-border-width );
+	padding: var( --s-form-input-padding );
+	background-color: var( --s-form-input-background-color );
+}
+
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="color"],
+textarea,
+select {
+	@include formInput();
+	&::-webkit-inner-spin-button {
+		opacity: 1;
+	}
+}
+select {
+	display: block;
+	position: relative;
+}
+.gform_wrapper.gravity-theme .gform_body {
+	input[type="text"],
+	input[type="password"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="month"],
+	input[type="week"],
+	input[type="email"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="time"],
+	input[type="url"],
+	input[type="color"],
+	textarea,
+	select {
+		@include formInput();
+		&::-webkit-inner-spin-button {
+			opacity: 1;
+		}
+	}
+	select {
+		display: block;
+		position: relative;
+	}
+}
+// input[type=number]::-webkit-inner-spin-button {
+// 	opacity: 1;
+// }

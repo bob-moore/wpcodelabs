@@ -1,0 +1,146 @@
+
+{{do_action( 'scaffolding/start' )}}
+
+{% block index %}
+
+	{% block head %}
+
+		<!doctype html>
+		<!--[if lt IE 9]><html class="no-js no-svg ie lt-ie9 lt-ie8 lt-ie7" {{site.language_attributes}}> <![endif]-->
+		<!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{site.language_attributes}}> <![endif]-->
+		<!--[if gt IE 9]><!--><html class="no-js no-svg" {{site.language_attributes}}> <!--<![endif]-->
+		<head>
+			<meta charset="{{site.charset}}" />
+
+			<meta name="description" content="{{site.description}}">
+
+			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+			<meta name="viewport" content="width=device-width, initial-scale=1">
+
+			<link rel="author" href="{{site.theme.link}}/humans.txt" />
+
+			<link rel="pingback" href="{{site.pingback_url}}" />
+
+			<link rel="profile" href="http://gmpg.org/xfn/11">
+
+			{{wp_head()}}
+
+		</head>
+
+	{% endblock head %}
+
+	{% block body %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+
+		{{do_action( 'wp_body_open' )}}
+
+		{{do_action( 'page/before' )}}
+
+		<div id="page" {{ markup.atts( 'page', { class : 'site' } )}}>
+
+			<a class="skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
+
+			{% block header %}
+
+			{{do_action( 'header/before' )}}
+
+				{% if has_action( 'masthead') %}
+
+					<header id="masthead" {{markup_atts( 'masthead', { class : 'site-header' } )}}>
+
+						{{do_action( 'masthead' )}}
+
+					</header>
+
+				{% endif %}
+
+			{{do_action( 'header/after' )}}
+
+			{% endblock header %}
+
+			{{do_action( 'main/before' )}}
+
+			<main id="main" {{markup_atts( 'main', { 'class' : 'site-main' } )}}>
+
+				{{do_action( 'main/open' )}}
+
+				<div {{markup_atts( 'main-container', { 'class' : 'container' })}}>
+
+					{{do_action( 'content/before' )}}
+
+					<div id="content" {{markup_atts( 'content', { 'class' : 'content-wrapper' } )}}>
+
+						{{do_action( 'primary/before' )}}
+
+						<div id="primary" {{markup_atts( 'primary', { 'class' : 'site-content' } )}}>
+
+							{{do_action( 'loop/before' )}}
+
+							{% if posts is not empty %}
+
+								{{do_action( 'loop' )}}
+
+							{% elseif wp.is_404 %}
+
+								{{do_action( 'content/404' )}}
+
+							{% else %}
+
+								{{do_action( 'content/none' )}}
+
+							{% endif %}
+
+							{{do_action( 'loop/after' )}}
+
+						</div>
+
+						{{do_action( 'primary/after' )}}
+
+					</div>
+
+					{{do_action( 'content/after' )}}
+
+				</div>
+
+				{{do_action( 'main/close' )}}
+
+			</main>
+
+			{{do_action( 'main/after' )}}
+
+{% block footer %}
+			{{ do_action( 'footer/before' ) }}
+
+			{% if has_action( 'colophon' ) %}
+
+				<footer id="colophon" {{markup_atts( 'colophon', { 'class' : 'site-footer' } )}}>
+
+					{{ do_action( 'colophon' ) }}
+
+				</footer>
+
+			{% endif %}
+
+			{{ do_action( 'footer/after' ) }}
+
+		</div><!-- End #page -->
+
+		{{ do_action( 'page/after' ) }}
+
+		{{ wp_footer() }}
+
+	{% endblock footer %}
+
+	</body>
+
+	{% endblock body %}
+
+</html>
+
+{% endblock index %}
+
+{{do_action( 'scaffolding/end' )}}

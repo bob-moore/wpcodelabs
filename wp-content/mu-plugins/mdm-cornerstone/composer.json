@@ -1,0 +1,28 @@
+{
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"autoload": {
+		"psr-4": {
+			"Mdm\\Cornerstone\\" : "includes",
+			"Mdm\\Cornerstone\\PostTypes\\" : "PostTypes",
+			"Mdm\\Cornerstone\\Taxonomies\\" : "Taxonomies",
+			"Mdm\\Cornerstone\\Blocks\\" : "Blocks",
+			"Mdm\\Cornerstone\\Addons\\" : "Addons"
+		}
+	},
+	"classmap": [
+		"../MDMCornerStone.php"
+	],
+	"require": {
+		"timber/timber": "^1.19",
+		"wpcl/wpconsole": "^1.0",
+		"htmlburger/carbon-fields": "^3.3",
+		"htmlburger/carbon-field-number": "^3.0",
+		"twig/cache-extra": "^3.4",
+		"htmlburger/carbon-field-icon": "^3.1"
+	},
+	"scripts": {
+		"post-install-cmd": "npm install",
+		"post-update-cmd": "npm install"
+	}
+}

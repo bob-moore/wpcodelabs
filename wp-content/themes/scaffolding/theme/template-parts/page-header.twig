@@ -1,0 +1,7 @@
+{% if has_action( 'hero' ) %}
+
+	<div id="hero" {{ markup_atts( 'hero', { class : 'page-header' } )}}>
+		{{do_action( 'hero' )}}
+	</div>
+
+{% endif %}

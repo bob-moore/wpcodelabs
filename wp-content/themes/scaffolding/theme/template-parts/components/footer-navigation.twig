@@ -1,0 +1,9 @@
+{% if menu( 'secondary' ) %}
+
+	<nav id="footer-navigation" {{markup_atts( 'footer-navigation', { class : 'secondary-navigation' })}}>
+
+		{{template_part( 'components/menu', '', { 'menu' : menu( 'secondary' ) } )}}
+
+	</nav>
+
+{% endif %}

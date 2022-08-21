@@ -1,0 +1,272 @@
+// $slick-font-family: '_scaffolding' !default;
+// $slick-arrow-color: #fff !default;
+// $slick-arrow-size: 40px !default;
+// $slick-dot-color: black !default;
+// $slick-dot-color-active: $slick-dot-color !default;
+// $slick-prev-character: "\e917" !default;
+// $slick-next-character: "\e918" !default;
+// $slick-dot-character: "\e92c" !default;
+// $slick-dot-size: 10px !default;
+// $slick-opacity-default: 0.75 !default;
+// $slick-opacity-on-hover: 1 !default;
+// $slick-opacity-not-active: 0.25 !default;
+
+// .elementor-widget-post-slider {
+// 	.slick-slider {
+// 		position: relative;
+// 		display: block;
+// 		box-sizing: border-box;
+// 		-webkit-touch-callout: none;
+// 		user-select: none;
+// 		touch-action: pan-y;
+// 		-webkit-tap-highlight-color: transparent;
+// 		.slick-list {
+// 			position: relative;
+// 			overflow: hidden;
+// 			display: block;
+// 			margin: 0;
+// 			padding: 0;
+// 			&:focus {
+// 				outline: none;
+// 			}
+// 			&.dragging {
+// 				cursor: pointer;
+// 				cursor: hand;
+// 			}
+// 		}
+// 		.slick-track,
+// 		.slick-list {
+// 			transform: translate3d( 0, 0, 0 );
+// 		}
+// 		.slick-track {
+// 			position: relative;
+// 			left: 0;
+// 			top: 0;
+// 			display: block;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			&:before,
+// 			&:after {
+// 				content: "";
+// 				display: table;
+// 			}
+// 			&:after {
+// 				clear: both;
+// 			}
+// 		}
+// 		.slick-slide {
+// 			float: left;
+// 			height: 100%;
+// 			min-height: 1px;
+// 			display: none;
+// 			[dir="rtl"] & {
+// 				float: right;
+// 			}
+// 			img {
+// 				display: block;
+// 			}
+// 			&.slick-loading img {
+// 				display: none;
+// 			}
+// 			&.dragging img {
+// 				pointer-events: none;
+// 			}
+// 		}
+// 		/**
+// 		 * Loading State
+// 		 */
+// 		&.slick-loading {
+// 			.slick-track {
+// 				visibility: hidden;
+// 			}
+// 			.slick-slide {
+// 				visibility: hidden;
+// 			}
+// 		}
+// 		/**
+// 		 * Initialized State
+// 		 */
+// 		&.slick-initialized {
+// 			.slick-slide {
+// 				display: block;
+// 				height: auto;
+// 			}
+// 		}
+// 		&.slick-vertical {
+// 			.slick-slide {
+// 				display: block;
+// 				height: auto;
+// 				border: 1px solid transparent;
+// 			}
+// 		}
+// 		.slick-arrow.slick-hidden {
+// 			display: none;
+// 		}
+
+// 		/**
+// 		 * Arrows
+// 		 */
+// 		.slick-prev,
+// 		.slick-next {
+// 			position: absolute;
+// 			display: block;
+// 			height: $slick-arrow-size;
+// 			width: $slick-arrow-size;
+// 			line-height: 0px;
+// 			font-size: 0px;
+// 			cursor: pointer;
+// 			background: rgba( #000, .45 );
+// 			color: $slick-arrow-color;
+// 			top: 50%;
+// 			transform: translate( 0, -50% );
+// 			padding: 0;
+// 			border: none;
+// 			outline: none;
+// 			z-index: 99;
+// 			&:hover, &:focus {
+// 				outline: none;
+// 				background: rgba( #000, .65 );
+// 				color: $slick-arrow-color;
+// 			}
+// 			&.slick-disabled:before {
+// 				opacity: $slick-opacity-not-active;
+// 			}
+// 			&:before {
+// 				font-family: $slick-font-family;
+// 				font-size: $slick-arrow-size / 2;
+// 				line-height: 1;
+// 				color: $slick-arrow-color;
+// 				-webkit-font-smoothing: antialiased;
+// 				-moz-osx-font-smoothing: grayscale;
+// 			}
+// 		}
+
+// 		.slick-prev {
+// 			left: 0;
+// 			background-repeat: no-repeat;
+// 			&:before {
+// 				content: $slick-prev-character;
+// 				[dir="rtl"] & {
+// 					content: $slick-next-character;
+// 				}
+// 			}
+// 		}
+
+// 		.slick-next {
+// 			right: 0;
+// 			&:before {
+// 				content: $slick-next-character;
+// 				[dir="rtl"] & {
+// 					content: $slick-prev-character;
+// 				}
+// 			}
+// 		}
+// 		/**
+// 		 * Dots
+// 		 */
+// 		&.slick-dotted {
+// 			// margin-bottom: 30px;
+// 		}
+
+
+// 		.slick-list {
+// 			.slick-loading & {
+// 				// background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+// 			}
+// 		}
+// 	}
+// 	.post-slider-dots {
+// 		--progress-bar-width : 0;
+// 		--progress-bar-position : 0;
+// 		--progress-bar-speed : 350ms;
+// 	}
+// 	.bar-navigation {
+// 		position: relative;
+// 		list-style: none;
+// 		display: block;
+// 		padding: 0;
+// 		margin: 0;
+// 		width: 100%;
+// 		display: flex;
+// 		flex-direction: row;
+// 		justify-content: center;
+// 		li {
+// 			flex: 1;
+// 			list-style: none;
+// 		}
+// 		&:before {
+// 			content: ' ';
+// 			width: var( --progress-bar-width );
+// 			display: block;
+// 			height: 10px;
+// 			background : red;
+// 			position: absolute;
+// 			left: var( --progress-bar-position );
+// 			top: 0;
+// 			transition: all var( --progress-bar-speed ) ease;
+// 			z-index: 2;
+// 		}
+// 		button {
+// 			border: 0;
+// 			padding: 0;
+// 			outline: none;
+// 			line-height: 0px;
+// 			font-size: 0px;
+// 			display: block;
+// 			width: 100%;
+// 			height: 10px;
+// 			background-color: rgba( #000, .3 );
+// 			z-index: 1;
+// 			position: relative;
+// 			&:hover, &:focus {
+// 				background-color: rgba( #000, .5 );
+// 			}
+// 		}
+// 		&.slick-active button {
+// 			background-color: rgba( #000, 1 );
+// 		}
+// 	}
+// 	.dot-navigation {
+// 		position: relative;
+// 		list-style: none;
+// 		display: block;
+// 		text-align: center;
+// 		padding: 0;
+// 		margin: 0;
+// 		width: 100%;
+// 		display: flex;
+// 		flex-direction: row;
+// 		justify-content: center;
+// 		li {
+// 			position: relative;
+// 			display: inline-block;
+// 			height: $slick-dot-size;
+// 			width: $slick-dot-size;
+// 			margin: 0 5px 0 0;
+// 			padding: 0;
+// 			cursor: pointer;
+// 			button {
+// 				border: 0;
+// 				background: transparent;
+// 				display: block;
+// 				height: $slick-dot-size;
+// 				width: $slick-dot-size;
+// 				outline: none;
+// 				line-height: 0px;
+// 				font-size: 0px;
+// 				color: transparent;
+// 				padding: 5px;
+// 				cursor: pointer;
+// 				background-color: rgba( #000, .25 );
+// 				border-radius: 100%;
+// 				&:hover, &:focus {
+// 					background-color: rgba( #000, 1 );
+// 				}
+// 			}
+// 			&.slick-active button {
+// 				background-color: rgba( #000, 1 );
+// 			}
+// 		}
+// 	}
+// }
+

@@ -1,0 +1,31 @@
+<li class="{{item.classes|join(' ')}} depth-{{item.level}}">
+
+	<a {{markup_atts( 'menu-item-link', { 'class' : 'menu-item-link', 'href' : item.link }, { 'item' : item, 'menu' : menu } )}}>
+
+		<span class="title">{{item.title}}</span>
+
+		{% if item.description %}
+
+			<span class="description">{{item.description}}</span>
+
+		{% endif %}
+
+	</a>
+
+	{% if item.children %}
+
+		<button {{markup_atts( 'sub-menu-toggle', { 'class' : 'sub-menu-toggle', 'aria-expanded' : 'false', 'aria-pressed' : 'false', 'role' : 'button' }, { 'item' : item, 'menu' : menu } )}}><span class="screen-reader-text">Submenu</span></button>
+
+		<ul {{markup_atts( 'sub-menu', { 'class' : 'sub-menu' }, { 'item' : item, 'menu' : menu } )}}>
+
+			{% for child in item.children %}
+
+				{{template_part( 'components', 'menu-item', { 'item' : child, 'menu' : menu } )}}
+
+			{% endfor %}
+
+		</ul>
+
+	{% endif %}
+
+</li>

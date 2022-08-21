@@ -1,0 +1,26 @@
+{
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"config": {
+		 "vendor-dir": "Lib/vendors",
+		 "optimize-autoloader" : true,
+		"allow-plugins": {
+			"composer/installers": true
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"Wpcl\\Scaffolding\\" : "Includes",
+			"Wpcl\\Scaffolding\\Lib\\" : "Lib",
+			"Wpcl\\Scaffolding\\Extensions\\" : "Extensions",
+			"Wpcl\\Scaffolding\\Components\\" : "Components",
+			"Wpcl\\Scaffolding\\Views\\" : "Views"
+		}
+	},
+	"require": {
+		"aristath/kirki": "^4.0",
+		"timber/timber": "^1.18",
+		"wpcl/wpconsole": "^1.0",
+		"htmlburger/carbon-fields": "^3.3"
+	}
+}

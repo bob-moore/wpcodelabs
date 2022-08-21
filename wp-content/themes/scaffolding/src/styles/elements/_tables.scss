@@ -1,0 +1,17 @@
+table {
+	margin-bottom: var( --s-content-margin );
+	width: 100%;
+	th, td {
+		border: 1px solid var( --s-color-border );
+		padding: .5em 1em;
+		line-height: inherit;
+		text-align: left;
+	}
+	thead {
+		th {
+			border-bottom: none;
+			border-bottom: none;
+			vertical-align: top;
+		}
+	}
+}

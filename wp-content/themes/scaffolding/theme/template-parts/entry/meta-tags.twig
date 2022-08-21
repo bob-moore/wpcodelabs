@@ -1,0 +1,13 @@
+{% if post.has_term( '', 'post_tag' ) %}
+
+		<span class="entry-term-list">
+
+			{% for term in post.terms( { query:{ taxonomy:'post_tag' }} ) %}
+
+				<a href="{{term.link}}" rel="tag">{{term.name}}</a>{% if not loop.last %}, {% endif %}
+
+			{% endfor %}
+
+		</span>
+
+{% endif %}

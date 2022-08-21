@@ -1,0 +1,9 @@
+<ul {{markup_atts( 'menu', { class : 'menu nav-menu theme-menu' }, { 'menu' : menu } )}}>
+
+	{% for item in menu.items %}
+
+		{{template_part( 'components', 'menu-item', { 'item' : item, 'menu' : menu } ) }}
+
+	{% endfor %}
+
+</ul>

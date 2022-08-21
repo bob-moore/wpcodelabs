@@ -1,0 +1,29 @@
+{
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"phpcs.standard": "PSR4",
+	"autoload": {
+		"psr-4": {
+			"Devkit\\CustomLayouts\\" : "includes",
+			"Devkit\\CustomLayouts\\Widgets\\" : "Widgets",
+			"Devkit\\CustomLayouts\\PostTypes\\" : "PostTypes",
+			"Devkit\\CustomLayouts\\Taxonomies\\" : "Taxonomies"
+		}
+	},
+	"classmap": [
+		"devkit-custom-layouts.php"
+	],
+	"require": {
+		"timber/timber": "^1.19",
+		"wpcl/wpconsole": "^1.0",
+		"htmlburger/carbon-fields": "^3.3",
+		"htmlburger/carbon-field-number": "^3.0",
+		"twig/cache-extra": "^3.4",
+		"scssphp/scssphp": "^1.10",
+		"padaliyajay/php-autoprefixer": "^1.4"
+	},
+	"scripts": {
+		"post-install-cmd": "npm install",
+		"post-update-cmd": "npm install"
+	}
+}

@@ -1,0 +1,71 @@
+<li class="comment" id="comment-{{ comment.id }}">
+
+	<div class="comment-container">
+
+		{% if comment.avatar %}
+
+			<div class="avatar">
+
+				<img src="{{ comment.avatar( 50 ) }}"  alt="Image of {{comment.author.name}}" />
+
+			</div>
+
+		{% endif %}
+
+		<div class="comment-body">
+
+			<header class="comment-author vcard">
+
+				<div class="comment-data">
+
+					{% if comment.comment_author_url %}
+
+						<span class="author"><a href="{{comment.author.url}}" target="_blank" rel="nofollow noreferrer noopener">{{ comment.comment_author }}</a></span>
+
+					{% else %}
+
+						<span class="author">{{ comment.author.name }}</span>
+
+					{% endif %}
+
+					<span class="date">{{ comment.date }} at {{comment.time}}</span>
+
+				</div>
+
+				{{ comment.reply_link() }}
+
+			</header>
+
+			<div class="comment-content">
+
+				{% if comment.approved %}
+
+					{{ comment.content }}
+
+				{% else %}
+
+					<em class="comment-awaiting-moderation">Comment under moderation</em>
+
+				{% endif %}
+
+			</div>
+
+		</div>
+
+	</div>
+
+	{% if comment.children %}
+
+		<ol class="comment-child">
+
+			{% for child in comment.children %}
+
+				{{ templatePart( 'comment', '', { comment : child } ) }}
+
+			{% endfor %}
+
+		</ol>
+
+	{% endif %}
+
+</li>

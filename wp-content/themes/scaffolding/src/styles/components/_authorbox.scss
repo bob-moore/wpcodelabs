@@ -1,0 +1,29 @@
+.author-box {
+	margin: 0 auto;
+	position: relative;
+	width: 100%;
+	.container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap : var( --s-content-gap, var( --s-content-padding ) );
+	}
+	.author-info {
+		flex: 1;
+		h4 {
+			line-height: 1;
+			margin: 0;
+		}
+	}
+	ul.author-social-links {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 1em;
+		margin: 0;
+		list-style-type: none;
+		li {
+			list-style-type: none;
+		}
+	}
+}

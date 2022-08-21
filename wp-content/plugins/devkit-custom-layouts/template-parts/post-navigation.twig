@@ -1,0 +1,85 @@
+{% if post.navigation %}
+
+	<div class="cl-post-navigation">
+
+	{% if post.navigation.prev %}
+
+		<a class="post-navigation-link link-prev" href="{{post.navigation.prev.link}}">
+
+			<div class="link-content">
+
+				{% if post.navigation.prev.prefix %}
+
+					<span class="label">
+
+						{% if post.navigation.prev.icon %}
+
+							<span class="prev-icon {{post.navigation.prev.icon}}"></span>
+
+						{% endif %}
+
+						{{post.navigation.prev.prefix}}
+
+					</span>
+
+				{% endif %}
+
+				<span class="title">{{post.navigation.prev.title}}</span>
+
+			</div>
+
+			{% if post.navigation.prev.icon %}
+
+				<div class="link-icon">
+
+					<span class="prev-icon {{post.navigation.prev.icon}}"></span>
+
+				</div>
+
+			{% endif %}
+
+		</a>
+
+	{% endif %}
+
+	{% if post.navigation.next %}
+
+		<a class="post-navigation-link link-next" href="{{post.navigation.next.link}}">
+
+		<div class="link-content">
+
+			{% if post.navigation.next.prefix %}
+
+				<span class="label">
+
+					{{post.navigation.next.prefix}}
+
+					{% if post.navigation.next.icon %}
+
+						<span class="next-icon {{post.navigation.next.icon}}"></span>
+
+					{% endif %}
+
+				</span>
+
+			{% endif %}
+
+			<span class="title">{{post.navigation.next.title}}</span>
+
+		</div>
+
+		{% if post.navigation.next.icon %}
+
+			<div class="link-icon">
+				<span class="next-icon {{post.navigation.next.icon}}"></span>
+			</div>
+
+		{% endif %}
+
+		</a>
+
+	{% endif %}
+
+	</div>
+
+{% endif %}

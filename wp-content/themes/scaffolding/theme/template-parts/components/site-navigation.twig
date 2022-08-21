@@ -1,0 +1,19 @@
+{% if menu( 'primary' ) %}
+
+	<nav id="site-navigation" {{markup_atts( 'site-navigation', { 'class' : 'primary-navigation' } )}}>
+
+		{{template_part( 'components/menu', '', { 'menu' : menu( 'primary' ) } )}}
+
+	</nav>
+
+{% endif %}
+
+{% if menu( 'primary' ) or has_action( 'navpane' ) %}
+
+	<button {{markup_atts( 'primary-menu-toggle', { 'class' : 'menu-toggle toggle-button', 'aria-controls' : 'site-navigation', 'aria-expanded' : 'false', 'data-triggers' : '#site-navigation'} )}}>
+
+		<span {{markup_atts( 'menu-toggle-icon', { 'class' : 's-icon s-icon-hamburger' } )}}><span class="screen-reader-text">Menu</span></span>
+
+	</button>
+
+{% endif %}

@@ -1,0 +1,82 @@
+:root {
+	--s-container-width : #{$container-width};
+	--s-container-width-narrow : calc( .75 * var( --s-container-width ) );
+
+	--s-content-padding : #{$padding};
+	--s-content-margin : #{$line-height}rem;
+	--s-container-padding : #{$padding};
+	--s-container-margin : #{$padding};
+	// --s-container-gap : #{$gutter*2};
+	--s-line-height : #{$line-height};
+	--s-content-spacing : #{$line-height}rem;
+	--s-container-gap : calc( var( --s-gutter ) * 2 );
+
+	--s-gutter : #{$gutter};
+
+	--s-sidebar-width : #{$sidebar-width};
+	--s-main-width : 1fr;
+	--s-blog-grid-columns : 1;
+
+	--s-background-color : #fff;
+
+	--s-font-color : #{$font-color};
+	--s-font-color-light: #{$light-font-color};
+	--s-color-primary : #{$primary-color};
+	--s-color-secondary : #{$secondary-color};
+	--s-color-success : #{$success-color};
+	--s-color-warning : #{$warning-color};
+	--s-color-alert : #{$alert-color};
+	--s-color-border : #{$border-color};
+
+	--s-serif-font : #{$serif-font};
+	--s-sans-font : #{$sans-font};
+	--s-monospace-font : #{$monospaced-font};
+	// --heading-font : #{$heading-font};
+	// --s-content-font : #{$content-font};
+	// --root-font-size : 1rem;
+
+	// --heading-font-weight : normal;
+
+	--h1-font-size : 2.25em;
+	--h2-font-size : 2em;
+	--h3-font-size : 1.75em;
+	--h4-font-size : 1.5em;
+	--h5-font-size : 1.25em;
+	--h6-font-size : 1em;
+
+
+	--s-color-facebook : #{$facebook-color};
+	--s-color-twitter : #{$twitter-color};
+	--googleplus-color : #{$googleplus-color};
+	--youtube-color : #{$youtube-color};
+	--s-linkedin-color : #{$linkedin-color};
+	--instagram-color : #{$instagram-color};
+	--whatsapp-color : #{$whatsapp-color};
+	--pinterest-color : #{$pinterest-color};
+	--reddit-color : #{$reddit-color};
+	--tumblr-color : #{$tumblr-color};
+	--rss-color : #{$rss-color};
+
+	--s-link-color : #{$link-color};
+	--s-link-hover-color : #{$link-hover-color};
+	--s-link-color-hover : #{$link-color-hover};
+	--s-button-background-color : #{$button-background-color};
+	--s-button-background-color-hover : #{$button-background-color-hover};
+	--s-button-color : #{$button-color};
+	--s-button-color-hover : #{$button-color-hover};
+	--s-button-border-radius : #{$button-border-radius};
+	--s-button-border-width : #{$button-border-width};
+	--s-button-border-type : #{$button-border-type};
+	--s-button-border-color : #{$button-border-color};
+
+	--s-loop-grid-column-width : #{$loop-grid-column-width};
+	--s-loop-grid-column-medium-width : #{$loop-grid-column-medium-width};
+	--s-loop-grid-column-large-width : #{$loop-grid-column-large-width};
+
+	--s-form-input-padding : #{$form-input-padding};
+	--s-form-input-border-color : #{$form-input-border-color};
+	--s-form-input-border-style : #{$form-input-border-style};
+	--s-form-input-border-width : #{$form-input-border-width};
+	--s-form-input-border-radius : #{$form-input-border-radius};
+	--s-form-input-background-color : #{$form-input-background-color};
+}

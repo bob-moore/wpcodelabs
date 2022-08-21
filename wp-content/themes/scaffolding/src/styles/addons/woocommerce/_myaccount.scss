@@ -1,0 +1,47 @@
+/**
+ * My Account
+ */
+.woocommerce-MyAccount-navigation {
+	width: 100%;
+	margin-bottom: var( --s-content-margin );
+	ul, li {
+		list-style-type: none;
+		list-style-position: inside;
+		padding: 0;
+		margin: 0;
+	}
+	ul {
+		border: 1px solid var( --s-color-border );
+	}
+	li {
+		display: block;
+		border-bottom: 1px solid var( --s-color-border );
+		&:last-child {
+			border-bottom: none;
+		}
+		a, a:link {
+			font-size: 1rem;
+			padding: var( --s-gutter );
+			display: block;
+			&:hover,
+			&:focus {
+				background: #F7F6F7;
+			}
+		}
+		&.is-active {
+			a, a:link {
+				background: #F7F6F7;
+				color: var( --s-link-hover-color);
+				font-weight: 600;
+				&:hover,
+				&:focus {
+					color: var( --s-link-hover-color);
+				}
+			}
+		}
+	}
+}
+
+.woocommerce-MyAccount-content {
+	width: 100%;
+}

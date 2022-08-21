@@ -1,0 +1,29 @@
+@import 'includes/variables';
+@import 'includes/mixins';
+
+.block-alert {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap : 1em;
+	color: var( --s-font-color );
+	overflow: hidden;
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	transition: all .25s;
+	border-radius: 0px 6px 6px 0px;
+	border: 1px solid rgba(227,232,237,1.00);
+	padding: var( --s-content-padding );
+	margin-bottom: var( --s-content-margin, 1.618em );
+	border-left-color: var( --alert-block-accent, #0e89cf );
+	border-left-width: 3px;
+	.alert-icon {
+		font-size: 1.8em;
+		color: var( --alert-block-accent, #0e89cf );
+	}
+	.alert-title {
+		font-size: 18px;
+		font-weight: 600;
+	}
+}

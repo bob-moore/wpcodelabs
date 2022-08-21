@@ -1,0 +1,59 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button,
+a.button,
+a.button:link,
+a.elementor-button,
+button.elementor-button,
+a.wp-block-file__button,
+a.wp-block-button__link,
+.wp-block-search button.wp-block-search__button {
+	display: inline-block;
+	vertical-align: middle;
+	padding: var( --s-button-line-height, 1rem 1.5rem );
+	margin: 0;
+	line-height: var( --s-button-line-height, 1 );
+	text-align: center;
+	cursor: pointer;
+	position: relative;
+	text-decoration: none;
+	outline: none;
+	border-radius: var( --s-button-border-radius );
+	border-width: var( --s-button-border-width );
+	border-style: var( --s-button-border-type );
+	border-color: var( --s-button-border-color );
+	background-color: var( --s-button-background-color );
+	color: var( --s-button-color );
+	transition: all .3s ease;
+	font-weight: var( --s-button-font-weight, inherit );
+	&:hover,
+	&:focus {
+		background-color: var( --s-button-background-color-hover );
+		color: var( --s-button-color-hover );
+	}
+}
+.wp-block-search button.wp-block-search__button {
+	margin-left: var( --s-content-padding );
+}
+
+button.menu-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	color : var( --s-link-color );
+	&:hover,
+	&:focus {
+		background: transparent;
+		color : var( --s-link-color );
+	}
+	@each $breakpoint, $size in $breakpoints {
+		&[data-breakpoint="#{$breakpoint}"] {
+			@include media( 'min-width : #{$breakpoint}' ) {
+				display: none;
+			}
+		}
+	}
+}

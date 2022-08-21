@@ -1,0 +1,244 @@
+:root {
+	--menu-item-padding : .5em;
+	--menu-item-background : transparent;
+	--menu-item-background-hover : var( --menu-item-background );
+}
+
+@mixin hover_menu(){
+	ul {
+		margin: 0;
+		display: flex;
+		flex-direction: row;
+	}
+	a, a:link {
+		display: block;
+		text-decoration: none;
+		width: 100%;
+	}
+	.menu-item {
+		border: none;
+		position: relative;
+		width: auto;
+		padding: 0;
+		&:hover,
+		&:focus,
+		&.focus {
+			> .sub-menu {
+				left: 0;
+				transform: scale( 1, 1 );
+				opacity: 1;
+			}
+		}
+		> .sub-menu.activated,
+		> .sub-menu.activating {
+			left: 0;
+			transform: scale( 1, 1 );
+			opacity: 1;
+		}
+		&.depth-0 {
+			span.description {
+				display: none;
+			}
+		}
+	}
+	.menu-item .sub-menu {
+		// left: 100%;
+		li:hover,
+		li:focus,
+		li.focus
+		li.activated {
+			> .sub-menu {
+				left: 100%;
+				transform: scale( 1, 1 );
+				opacity: 1;
+			}
+		}
+		.sub-menu {
+			left: 100%;
+		}
+
+	}
+	.sub-menu {
+		position: absolute;
+		top: 100%;
+		background-color: #fff;
+		min-width: 200px;
+		line-height: 1;
+		text-align: left;
+		z-index: 999;
+		// box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+		display: block;
+		padding: 0;
+		transform: scale( 1, 0 );
+		transform-origin: 0 0;
+		transition: transform .25s ease, opacity .25s ease;
+		opacity: 0;
+		padding: 0;
+		.sub-menu {
+			top: 0;
+		}
+	}
+	.sub-menu-toggle {
+		display: none;
+	}
+}
+@mixin dropdown_menu() {
+	.menu-item {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		overflow: hidden;
+	}
+	.nav-item-container {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		a, a:link {
+			flex: 1;
+		}
+	}
+	.sub-menu {
+		position: relative;
+		top: auto;
+		width: 100%;
+		box-shadow: none;
+		border-radius: 0;
+		transform: none;
+		transform-origin: none;
+		left: auto;
+		display: none;
+		&.activating,
+		&.activated {
+			display: block;
+			opacity: 1;
+			visibility: visible;
+		}
+		.sub-menu {
+			left: auto;
+		}
+	}
+	.sub-menu-toggle {
+		display: block;
+	}
+}
+/**
+ * Base menu styles
+ */
+.theme-menu {
+	width: 100%;
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style-position: inside;
+	li {
+		list-style-type: none;
+		list-style-position: inside;
+		display: inline-block;
+		border: none;
+		position: relative;
+		vertical-align: top;
+		width: 100%;
+		display: flex;
+		flex-direction : row;
+		flex-wrap: wrap;
+		line-height: 1.25;
+	}
+	a, a:link {
+		color: var( --s-link-color );
+		display: block;
+		flex: 1;
+		padding: var( --menu-item-padding );
+		background-color : var( --menu-item-background );
+		&:hover,
+		&:focus,
+		&.focus {
+			color: var( --s-link-color-hover );
+			background-color : var( --menu-item-background-hover );
+		}
+		span.title,
+		span.description {
+			display: block;
+		}
+		span.description {
+			font-size: .85em;
+		}
+	}
+	.sub-menu {
+		display: block;
+		width: 100%;
+		padding: 0 0 0 12px;
+	}
+	.sub-menu-toggle {
+		background: transparent;
+		color: var( --s-link-color );
+		border: none;
+		background: transparent;
+		font-size: 1em;
+		line-height: 1;
+		padding: 0 1em;
+		margin: 0;
+		display: none;
+		&:before {
+			border-style: solid;
+			border-width: 2px 2px 0 0;
+			content: '';
+			display: block;
+			height: .5em;
+			position: relative;
+			transform: rotate(45deg);
+			vertical-align: top;
+			width: .5em;
+			transition: all .25s ease;
+		}
+		&.activating,
+		&.activated {
+			&:before {
+				transform: rotate( 135deg );
+			}
+		}
+	}
+}
+
+.primary-navigation:not([data-breakpoint]),
+.primary-navigation[data-breakpoint=""] {
+	--menu-item-padding : 1em;
+	@include hover_menu();
+}
+
+@each $breakpoint, $size in $breakpoints {
+	.primary-navigation[data-breakpoint="#{$breakpoint}"] {
+		@include media( 'max-width : #{$breakpoint}' ) {
+			@include dropdown_menu();
+		}
+		@include media( 'min-width : #{$breakpoint}' ) {
+			--menu-item-padding : 1em;
+			@include hover_menu();
+		}
+	}
+}
+
+// #secondary .theme-menu,
+// .widget_nav_menu .theme-menu {
+// 	@include dropdown_menu();
+// }
+
+.dropdown-menu {
+	.scaffolding-menu,
+	.theme-menu {
+		@include dropdown_menu();
+	}
+}
+
+.hover-menu {
+	.scaffolding-menu,
+	.theme-menu {
+		@include hover_menu();
+	}
+}
+
+.theme-menu.dropdown,
+.widget_nav_menu.dropdown .theme-menu {
+	@include dropdown_menu();
+}

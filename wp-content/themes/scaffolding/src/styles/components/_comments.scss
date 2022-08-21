@@ -1,0 +1,108 @@
+.comments-area {
+	display: flex;
+	flex-direction: column;
+	gap: var( --s-container-gap, var( --s-container-margin ) );
+	li.comment {
+		list-style-type: none;
+		list-style-position: inside;
+		display: flex;
+		flex-direction: column;
+		gap: var( --s-container-gap, var( --s-container-margin ) );
+	}
+	.comment-container {
+		display: flex;
+		flex-direction: row;
+		border: 1px solid var( --s-color-border );
+		padding : var( --s-container-padding );
+		// margin: 0 0 var( --s-container-margin ) 0;
+
+		.avatar {
+			max-width: 40px;
+			margin-right: var( --s-container-padding );
+		}
+	}
+	.comment-author {
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		.comment-data {
+			flex: 1;
+		}
+		span.author {
+			font-weight: 600;
+			margin-right: 4px;
+			white-space: nowrap;
+		}
+		span.date {
+			font-size: .75em;
+			white-space: nowrap;
+		}
+	}
+	.comment-body {
+		flex: 1;
+	}
+
+	.comments-title {
+		margin: 0;
+	}
+
+	ol.comment-list,
+	ol.comment-child {
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var( --s-container-gap, var( --s-container-margin ) );
+	}
+	ol.comment-child {
+		padding-left: var( --s-container-padding );
+	}
+	.comment-content {
+		p:last-child {
+			margin: 0;
+		}
+	}
+	p.form-submit,
+	input#submit {
+		margin: 0;
+	}
+	#reply-title {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		#cancel-comment-reply-link {
+			margin-bottom: 0;
+			font-size: .9rem;
+			font-family: var( --s-content-font );
+		}
+	}
+	.comment-form {
+		display: grid;
+		grid-template-columns: repeat( 4, 1fr );
+		grid-template-rows: minmax( min-content, max-content );
+		gap : var( --s-container-margin );
+		p {
+			grid-column: 1/5;
+			margin: 0;
+			&.comment-form-author {
+				grid-column: 1/3;
+			}
+			&.comment-form-email {
+				grid-column: 3/5;
+			}
+			&.comment-form-cookies-consent {
+				display: flex;
+				flex-direction: row;
+				// align-items: center;
+				input {
+					margin: 3px 5px 0 0;
+				}
+			}
+		}
+		label {
+			font-weight: 600;
+			font-size: .85em;
+		}
+	}
+}

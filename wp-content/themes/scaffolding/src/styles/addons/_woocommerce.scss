@@ -1,0 +1,51 @@
+.woocommerce #page,
+.woocommerce-page #page,
+#page .woocommerce {
+	// #page {
+		/**
+		 * Imports
+		 */
+		@import 'woocommerce/global';
+		@import 'woocommerce/myaccount';
+		@import 'woocommerce/shop';
+		@import 'woocommerce/product';
+		@import 'woocommerce/cart';
+		@import 'woocommerce/checkout';
+	// }
+}
+
+
+:root {
+	--shop-item-padding : #{$padding};
+	--shop-item-gutter : #{$gutter};
+	--shop-item-width : 50%;
+	--grid-columns : 2;
+	ul.products {
+		&.columns-1 {
+			--grid-columns : 1;
+		}
+	}
+	@include breakpoint( 'tablet' ) {
+		ul.products {
+			&.columns-2 {
+				--grid-columns : 2;
+			}
+		}
+	}
+	@include breakpoint( $layout-breakpoint ) {
+		ul.products {
+			&.columns-3 {
+				--grid-columns : 3;
+			}
+			&.columns-4 {
+				--grid-columns : 4;
+			}
+			&.columns-5 {
+				--grid-columns : 5;
+			}
+			&.columns-6 {
+				--grid-columns : 6;
+			}
+		}
+	}
+}

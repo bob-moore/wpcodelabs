@@ -1,0 +1,59 @@
+.site-header {
+	padding: var( --s-container-padding );
+	position: relative;
+	> .container {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: var(--s-container-gap, calc( var( --s-gutter ) * 2 ) );
+	}
+	.site-branding {
+		margin-right: auto;
+		display: block;
+		flex : 1;
+		.custom-logo-link {
+			display: inline-block;
+		}
+		.site-title {
+			margin: 0;
+			line-height: 1;
+			font-size: 1.25rem;
+			.wp-custom-logo & {
+				@include invisible();
+			}
+		}
+		.site-description {
+			margin: 0;
+			line-height: 1;
+			.wp-custom-logo & {
+				@include invisible();
+			}
+		}
+	}
+	.primary-navigation {
+		white-space: nowrap;
+		.menu-item {
+			white-space: normal;
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	.primary-navigation[data-breakpoint="#{$breakpoint}"] {
+		@include media( 'max-width : #{$breakpoint}' ) {
+				display: none;
+				order: 10;
+				width: 100%;
+				&.activating,
+				&.activated {
+					display: block;
+					background: #fff;
+				}
+		}
+		@include media( 'min-width : #{$breakpoint}' ) {
+			display: block;
+		}
+	}
+}
+

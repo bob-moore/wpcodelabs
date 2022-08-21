@@ -1,0 +1,23 @@
+			{{ do_action( 'footer/before' ) }}
+
+			{% if has_action( 'colophon' ) %}
+
+				<footer id="colophon" {{markup_atts( 'colophon', { 'class' : 'site-footer' } )}}>
+
+					{{ do_action( 'colophon' ) }}
+
+				</footer>
+
+			{% endif %}
+
+			{{ do_action( 'footer/after' ) }}
+
+		</div><!-- End #page -->
+
+		{{ do_action( 'page/after' ) }}
+
+		{{ wp_footer() }}
+
+	</body>
+
+</html>

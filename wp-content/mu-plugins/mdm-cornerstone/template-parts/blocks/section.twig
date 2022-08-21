@@ -1,0 +1,23 @@
+{% if fields.background_image %}
+
+<section class="section-block" style="--section-background-img : url('{{ fields.background_image }}')">
+
+{% else %}
+
+	<section class="section-block">
+
+{% endif %}
+
+<div class="section-block" style="--section-background-img : url('{{ fields.background_image }}')">
+
+	<div class="section-inner">
+
+		<div class="container">
+
+			<InnerBlocks />
+
+		</div>
+
+	</div>
+
+</section>

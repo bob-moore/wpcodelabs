@@ -1,0 +1,59 @@
+@use 'sass:math';
+
+.row {
+	margin: 0 calc( -1 * var( --s-gutter ) );
+	padding: 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	position: relative;
+	@include clearfix();
+	> .column {
+		padding: 0 var( --s-gutter );
+		width: var( --grid-item-width );
+	}
+	&.collapse {
+		margin: 0;
+		.column {
+			padding: 0;
+		}
+	}
+}
+
+ @mixin grid( $size ) {
+ 	.column {
+ 		&[class*="#{$size}"] {
+        	float : left;
+        	&.end { float: right; }
+     	}
+     	@for $i from 1 through 12 {
+     	    &.#{$size}-#{$i} {
+     	    	// --grid-item-width : #{percentage( $i / 12 )};
+     	    	--grid-item-width : #{math.div($i, 12)};
+
+     	    }
+     	    &.#{$size}-push-#{$i} {
+     	        position: relative;
+     	        left: #{math.div($i, 12)};
+     	        right: auto;
+     	    }
+     	    &.#{$size}-pull-#{$i} {
+     	        position: relative;
+     	        right: #{math.div($i, 12)};
+     	        left: auto;
+     	    }
+     	    &.#{$size}-offset-#{$i} {
+     	        margin-left:#{math.div($i, 12)};
+     	    }
+     	}
+ 	}
+}
+
+
+@each $breakpoint, $size in $breakpoints {
+    @include media( 'min-width : #{$breakpoint}' ) {
+        @include grid( $breakpoint );
+    }
+}
+

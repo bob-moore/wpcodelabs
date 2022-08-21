@@ -1,0 +1,23 @@
+{% if contextual_related_posts %}
+
+	<div class="crp post-grid">
+
+		{% for post in contextual_related_posts %}
+
+			<div class="related-post">
+
+					{% if post.thumbnail.src %}
+						<a href="{{ post.link }}" class="related-post-thumbnail-link" rel="bookmark"><img src="{{ post.thumbnail.src( 'small_4x3' ) }}" alt="{{ post.title }}" class="related-post-thumbnail"></a>
+					{% endif %}
+
+					<div class="related-post-content">
+						<span class="posted-on"><time class="entry-date published" datetime="{{ post.date }}">{{ post.time( 'D F jS, Y' ) }}</time></span>
+						<a href="{{ post.link }}" class="related-post-link" rel="bookmark"><span class="related-entry-title">{{ post.title }}</span></a>
+					</div>
+			</div>
+
+		{% endfor %}
+
+	</div>
+
+{% endif %}

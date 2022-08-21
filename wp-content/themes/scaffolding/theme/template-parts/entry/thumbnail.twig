@@ -1,0 +1,29 @@
+{% if post.thumbnail.src %}
+
+	{% if is_singular() == false %}
+
+		<a href="{{post.link}}" rel="bookmark" class="post-thumbnail-link">
+
+	{% endif %}
+
+	<span class="thumbnail-container">
+
+	<img
+		src="{{ post.thumbnail.src( 'post-thumbnail' ) }}"
+		class="post-thumbnail"
+		alt="Image for {{ post.title }}"
+		width="{{imageSize( post.thumbnail.src( 'post-thumbnail' ) ).width}}"
+		height="{{imageSize( post.thumbnail.src( 'post-thumbnail' ) ).height}}"
+		srcset="{{ post.thumbnail.srcset }}"
+		sizes="{{ post.thumbnail.img_sizes }}"
+	/>
+
+	</span>
+
+	{% if is_singular() == false %}
+
+		</a>
+
+	{% endif %}
+
+{% endif %}

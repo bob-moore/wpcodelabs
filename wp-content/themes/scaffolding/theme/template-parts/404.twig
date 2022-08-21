@@ -1,0 +1,37 @@
+<section class="error404 not-found">
+
+	<div class="error404-content">
+
+		<div class="error404-background">
+
+			<h1>404</h1>
+
+		</div>
+
+		<h2>{{ __( 'We are sorry, Page not found!', 'scaffolding' ) }}</h2>
+
+		<p>{{ __( 'The page you are looking for might have been removed had its name changed or is temporarily unavailable. Try searching to find what you need.', 'scaffolding' ) }}</p>
+
+		{{ template_part( 'components', 'searchform' ) }}
+
+		<h3 class="text-align-center">{{ __( 'OR', 'scaffolding' ) }}</h3>
+
+		<p><a href="{{ site.url }}" rel="home" class="button">{{ __( 'Return to Homepage', 'scaffolding' ) }}</a></p>
+
+	</div>
+
+	{% if related %}
+
+		<div class="error-404-suggestions">
+			<ul>
+			{% for post in related %}
+				<li><a href="{{post.link}}" rel="bookmark">{{ post.title }}</a></li>
+			{% endfor %}
+			</ul>
+		</div>
+
+	{% endif %}
+
+
+
+</section>

@@ -1,0 +1,52 @@
+<section id="comments" class="comments-area">
+
+	{% block comments %}
+
+	{% if post.comments %}
+
+		{% if post.comments|length %}
+
+			{% block comments_header %}
+
+			<header class="comments-header">
+
+				<h2 class="comments-title">{{ post.comments|length }} comment on {{ post.title }}</h2>
+
+			</header>
+
+			{% endblock comments_header %}
+
+			{% block comments_list %}
+
+			<ol class="comment-list">
+
+				{% for comment in post.comments %}
+
+					{{ templatePart( 'comment', '', { comment : comment } ) }}
+
+				{% endfor %}
+
+			</ol>
+
+			{% endblock comments_list %}
+
+		{% endif %}
+
+		{# {{ wp.the_comments_navigation() }} #}
+
+		{% block comments_form %}
+
+		<div class="comment-form-area">
+
+			{{ wp.comment_form }}
+
+		</div>
+
+		{% endblock comments_form %}
+
+	{% endif %}
+
+	{% endblock comments %}
+
+</section>
+
