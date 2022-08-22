@@ -262,7 +262,18 @@ body {
 		max-width: 1600px !important;
 	}
 }
-#custom-layout-2037 {
+.section-block {
+	background-color: var( --section-background-color );
+	background-image:  var( --section-background-img );
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	.section-inner {
+		background-color: var( --section-inner-background-color );
+		padding: var( --s-content-padding );
+	}
+}
+.subscribe-container {
 	.section-block {
 		background-color: var( --theme-dark-blue );
 		background-image:  var( --section-background-img );
@@ -292,7 +303,7 @@ body {
 		}
 	}
 	.section-inner {
-		background-color: rgba( #1d2733, .55 );
+		--section-inner-background-color: rgba( #1d2733, .55 );
 		padding: var( --s-content-padding );
 		@include media( 'min-width: tablet' ) {
 			padding: 7%  var( --s-content-padding );

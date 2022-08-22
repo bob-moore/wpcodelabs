@@ -65,7 +65,6 @@ class Section extends Framework
 		$context = [
 			'fields' => get_fields()
 		];
-
 		Subscriber::getInstance( 'FrontEnd' )->templatePart( 'blocks/section', '', $context );
 	}
 }
