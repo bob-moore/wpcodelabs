@@ -230,7 +230,7 @@ function theme_parts()
 	}
 	else {
 		Subscriber::removeAction( 'entry/meta', ['Layout', 'entry/meta-date'], 6 );
-
+		Subscriber::removeAction( 'entry/footer/includes', ['Layout', 'entry/info'] );
 		add_action( 'loop/start', function() {
 			echo '<div class="loop-container">';
 		});

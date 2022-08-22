@@ -1,0 +1,11 @@
+{% if is_singular() %}
+
+	{{ the_content() }}
+
+{% else %}
+
+	{{ the_excerpt() }}
+
+	<a href="{{post.link}}" rel="bookmark" class="read-more button">{{apply_filters( 'scaffolding/readmore', 'Read Full Post' )}}<span class="_s_icon _s_icon-arrow_forward"></span></a>
+
+{% endif %}

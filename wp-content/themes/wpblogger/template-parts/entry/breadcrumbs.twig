@@ -1,0 +1,24 @@
+<div class="after-header-bar">
+	<div class="container">
+		<div class="row">
+			<div class="column-tablet-6">
+				<div class="breadcrumbs">
+					{{ breadcrumbs }}
+				</div>
+			</div>
+			<div class="column-tablet-6">
+				<div class="search">
+					<form role="search" method="get" id="searchform" class="searchform" action="{{site.link}}">
+
+						<label class="screen-reader-text" for="s">Search for:</label>
+
+						<input type="text" value="{{ get_search_query() }}" name="s" id="s" />
+
+						<input type="submit" id="searchsubmit" value="Search" />
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

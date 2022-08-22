@@ -65,6 +65,10 @@ select {
 		position: relative;
 	}
 }
-// input[type=number]::-webkit-inner-spin-button {
-// 	opacity: 1;
-// }
+form#searchform {
+	display: flex;
+	flex-direction: row;
+	#s {
+		flex: 1;
+	}
+}

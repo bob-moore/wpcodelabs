@@ -11,7 +11,7 @@
 	@include clearfix();
 	> .column {
 		padding: 0 var( --s-gutter );
-		width: var( --grid-item-width );
+		width: var( --grid-item-width, 100% );
 	}
 	&.collapse {
 		margin: 0;
@@ -30,21 +30,21 @@
      	@for $i from 1 through 12 {
      	    &.#{$size}-#{$i} {
      	    	// --grid-item-width : #{percentage( $i / 12 )};
-     	    	--grid-item-width : #{math.div($i, 12)};
+     	    	--grid-item-width : #{percentage( math.div($i, 12) )};
 
      	    }
      	    &.#{$size}-push-#{$i} {
      	        position: relative;
-     	        left: #{math.div($i, 12)};
+     	        left: #{percentage( math.div($i, 12) )};
      	        right: auto;
      	    }
      	    &.#{$size}-pull-#{$i} {
      	        position: relative;
-     	        right: #{math.div($i, 12)};
+     	        right: #{percentage( math.div($i, 12) )};
      	        left: auto;
      	    }
      	    &.#{$size}-offset-#{$i} {
-     	        margin-left:#{math.div($i, 12)};
+     	        margin-left: #{percentage( math.div($i, 12) )};
      	    }
      	}
  	}

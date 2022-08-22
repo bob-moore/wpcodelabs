@@ -14,8 +14,8 @@
 		alt="Image for {{ post.title }}"
 		width="{{imageSize( post.thumbnail.src( 'post-thumbnail' ) ).width}}"
 		height="{{imageSize( post.thumbnail.src( 'post-thumbnail' ) ).height}}"
-		srcset="{{ post.thumbnail.srcset }}"
-		sizes="{{ post.thumbnail.img_sizes }}"
+		srcset="{{ post.thumbnail.srcset( 'post-thumbnail' ) }}"
+		sizes="{{ post.thumbnail.img_sizes( 'post-thumbnail' ) }}"
 	/>
 
 	</span>
