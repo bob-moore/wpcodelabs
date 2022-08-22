@@ -204,7 +204,7 @@ class Layout extends Lib\Framework
 	 */
 	public function comments() : void
 	{
-		if ( post_password_required() || ! is_singular() || ! comments_open() || ! get_comments_number() )
+		if ( post_password_required() || ! is_singular() || ! comments_open() )
 		{
 			return;
 		}

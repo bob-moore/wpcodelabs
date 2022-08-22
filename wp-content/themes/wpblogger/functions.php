@@ -251,3 +251,23 @@ function theme_scope( $_scope )
 	return $_scope;
 }
 add_filter( 'timber/context', 'theme_scope' );
+
+/**
+ * Add functions to twig
+ *
+ * @param object $twig Twig instance to add function to
+ */
+function theme_twig_functions( object $twig ) : object
+{
+	$twig->AddFunction( new \Timber\Twig_Function( 'add_to_any', 'theme_add_to_any' ) );
+	return $twig;
+}
+add_filter( 'timber/twig', 'theme_twig_functions' );
+
+function theme_add_to_any( $args = [] )
+{
+	if ( function_exists( 'ADDTOANY_SHARE_SAVE_KIT' ) )
+	{
+		ADDTOANY_SHARE_SAVE_KIT( $args );
+	}
+}
