@@ -42,7 +42,7 @@ function theme_image_sizes()
 		'post-thumbnail' =>
 		[
 			'width' => 1600,
-			'height' => 1600 / 1.618,
+			'height' => 1600 * 0.5625,
 			'crop' => true,
 			'name' => __( 'Post Thumbnail', 'scaffolding' )
 		],
@@ -130,6 +130,27 @@ function theme_image_sizes()
 			'crop' => true,
 			'name' => __( 'Small Square', 'scaffolding' )
 		],
+		'full_16x9' =>
+		[
+			'width' => 1600,
+			'height' => 1600 * 0.5625,
+			'crop' => true,
+			'name' => __( 'HD 16x9', 'scaffolding' )
+		],
+		'full_4x3' =>
+		[
+			'width' => 1600,
+			'height' => 1600 * 0.75,
+			'crop' => true,
+			'name' => __( 'HD 4x3', 'scaffolding' )
+		],
+		'full_1x1' =>
+		[
+			'width' => 1600,
+			'height' => 1600,
+			'crop' => true,
+			'name' => __( 'HD Square', 'scaffolding' )
+		],
 		'hd_16x9' =>
 		[
 			'width' => 2560,
@@ -162,14 +183,14 @@ function theme_register_image_sizes()
 	foreach ( $image_sizes as $key => $args ) {
 
 		if ( $key === 'post-thumbnail' ) {
-			// set_post_thumbnail_size( $args['width'], $args['height'], $args['crop'] );
+			set_post_thumbnail_size( $args['width'], $args['height'], $args['crop'] );
 		}
 
 		else {
 			add_image_size( $key, $args['width'], $args['height'], $args['crop'] );
 		}
 	}
-	set_post_thumbnail_size( 1600, 1600 * 0.5625, $args['crop'] );
+	// set_post_thumbnail_size( 1600, 1600 * 0.5625, $args['crop'] );
 }
 add_action('after_setup_theme', 'theme_register_image_sizes');
 
